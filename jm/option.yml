@@ -1,0 +1,32 @@
+client:
+  cache: null
+  domain: []
+  impl: api
+  postman:
+    meta_data:
+      headers: null
+      impersonate: chrome
+      proxies: {}
+    type: curl_cffi
+  retry_times: 5
+dir_rule:
+  base_dir: ${download}
+  normalize_zh: null
+  rule: Bd / Aalbum_id
+download:
+  cache: true
+  image:
+    decode: true
+    suffix: .jpg
+  threading:
+    image: 30
+    photo: 8
+log: false
+plugins:
+  after_photo:
+   - plugin: long_img
+     kwargs:
+        img_dir: ${download_long}
+        filename_rule: Pid
+  valid: log
+version: '2.1'

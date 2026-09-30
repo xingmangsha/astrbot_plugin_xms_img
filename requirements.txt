@@ -1,0 +1,4 @@
+aiohttp
+jmcomic
+pyvips
+pyvips-binary

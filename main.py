@@ -261,13 +261,13 @@ def fetch_random_image(API: dict) -> tuple:
         return (1, f"请求失败: {str(e)}")
 
 
-@register("xms_astrbot_plugin","xmsCCB", "查询器", "0.0.1")
+@register("astrbot_plugin_xms_img","xmsCCB", "查询器", "1.7.1")
 class XMS_astrbot_plugin(Star):
-    def __init__(self, context: Context, config: dict):
+    def __init__(self, context: Context):
         super().__init__(context)
-        self.config = config
+        self.config = context.get_config()
         self.mc = MinecraftServerStatus.mc_Information
-        logger.info("xms的img插件已加载")
+        logger.info("xms的插件已加载")
 
     @filter.command("jm",alias={"JM"})
     @filter.event_message_type(filter.EventMessageType.PRIVATE_MESSAGE)
